@@ -43,7 +43,8 @@ form#parameters {
     padding: 0 2px;
 }
 #parameters [type="submit"] {
-    width: 25%;
+    /* width: 25%; */
+    padding: 5px 10px;
     border: 1px solid #D1D5DB;
     box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
     cursor: pointer;
