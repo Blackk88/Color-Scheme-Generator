@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Color scheme generator</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+
+        <!-- Form for choosing color and scheme -->
+        <form id="parameters">
+            <input id="select-color" type="color" name="hex">
+            <select id="scheme-mode" name="scheme-mode">
+                <option value="monochrome">Monochrome</option>
+                <option value="monochrome-dark">Monochrome-dark</option>
+                <option value="monochrome-light">Monochrome-light</option>
+                <option value="analogic">Analogic</option>
+                <option value="complement">Complement</option>
+                <option value="analogic-complement">Analogic-complement</option>
+                <option value="triad">Triad</option>
+                <option value="quad">Quad</option>
+            </select>
+            <input id="color-scheme"type="submit" value="Get color scheme">
+        </form>
+
+        <div id="color-container">
+                <div id="color"><h4></h4></div>
+                <div id="color"><h4></h4></div>
+                <div id="color"><h4></h4></div>
+                <div id="color"><h4></h4></div>
+                <div id="color"><h4></h4></div>
+        </div>
+
+        <script src="index.js"></script>
+    </body>
+</html>
