@@ -1,4 +1,4 @@
-const colorContainer = document.querySelectorAll("#color")
+const colorContainer = document.querySelectorAll(".color")
 
 /* Get and render color scheme from API  */
 
