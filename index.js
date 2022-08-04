@@ -1,4 +1,5 @@
-const colorContainer = document.querySelectorAll(".color")
+const colorContainer = document.querySelector("#color-container")
+let colorHtml = ""
 
 /* Get and render color scheme from API  */
 
@@ -10,12 +11,21 @@ document.querySelector("#parameters").addEventListener("submit", function(e){
     fetch(`https://www.thecolorapi.com/scheme?hex=${inputColor}&mode=${inputMode}`)
         .then(res => res.json())
         .then(data => {
-            for (let i = 0; i < data.colors.length; i++) {
-            colorContainer[i].style.background = data.colors[i].hex.value
-            colorContainer[i].children[0].textContent = data.colors[i].hex.value
+            colorHtml = ""
+            for (let color of data.colors) {
+            colorHtml += `
+                <div class="color"><h4>${color.hex.value}</h4></div>
+            `
+        }
+
+        colorContainer.innerHTML = colorHtml
+        const colorsEl = document.querySelectorAll(".color")
+
+        for (let i=0; i < data.colors.length; i++) {
+            colorsEl[i].style.background = data.colors[i].hex.value
+            colorsEl[i].children[0].textContent = data.colors[i].hex.value
         }
     })
-    
 })
 
 /* Copying color code to clipboard and display that */
